@@ -9,7 +9,7 @@ public class DateTimeClient {
             System.out.println("Pass the server IP as the sole command line argument");
             return;
         }
-        Socket socket = new Socket(args[0], 5000);
+        Socket socket = new Socket(args[0], 5001);
         Scanner in = new Scanner(socket.getInputStream());
         System.out.println("Server response: " + in.nextLine());
     }

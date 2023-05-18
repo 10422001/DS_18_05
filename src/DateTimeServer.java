@@ -4,7 +4,7 @@ import java.net.Socket;
 import java.util.Date;
 public class DateTimeServer {
 
-    public final static int daytimePort = 5000;
+    public final static int daytimePort = 5001;
 
     public static void main(String[] args) throws IOException {
         ServerSocket theServer;
