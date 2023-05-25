@@ -20,12 +20,18 @@ public class UDPClient {
         DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
         clientSocket.send(sendPacket);
         DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+
+        clientSocket.receive(receivePacket);
+        String modifiedSentence = new String(receivePacket.getData());
+        System.out.println("From Server: " + modifiedSentence);
+        clientSocket.close();
+
     }
 
     public static void main(String[] args) throws Exception{
         UDPClient tcpclient = new UDPClient();
-//        while(true) {
+        while(true) {
             tcpclient.runClient();
-//        }
+        }
     }
 }
